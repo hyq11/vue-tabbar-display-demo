@@ -1,4 +1,4 @@
-# vue-hyq
+# vue-tabbar-page-display
 
 ## Project setup
 ```
