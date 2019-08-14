@@ -1,4 +1,7 @@
-``` js
+# vue.config.js 中配置(按需使用)
+
+```js
+
 // vue.config.js
 const path = require('path')
 const CompressionPlugin = require('compression-webpack-plugin')
@@ -113,10 +116,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         // 设置css中引用文件的路径，引入通用使用的scss文件（如包含的@mixin）
-        data: `
-				$baseUrl: "/";
-				@import '@/assets/scss/_common.scss';
-				`
+        data: ` $baseUrl: "/"; @import '@/assets/scss/_common.scss';`
         // data: `
         // $baseUrl: "/";
         // `

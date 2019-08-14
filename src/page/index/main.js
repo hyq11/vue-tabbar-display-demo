@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+
+// 引入有赞的全局样式
 import 'vant/lib/index.css'
 // import 'lib-flexible/flexible.js'
-import '../../assets/index.scss'
+import '@/assets/styles/index.scss'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 
+// 引入路由
 const { routes } = require('@/page/index/router/routes')
-console.log(routes)
 
 const router = new VueRouter({
   mode: 'history',
