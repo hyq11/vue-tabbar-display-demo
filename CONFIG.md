@@ -138,7 +138,9 @@ module.exports = {
         target: 'http://172.16.1.12:7071',
         changeOrigin: true,
         // ws: true,//websocket支持
-        secure: false
+        secure: false,
+        ws: false //解决console控制台反复打印“WebSocket connection to ‘ws://192.168.188.117:8080/sockjs-node/470/djhbq40w/websocket’ failed: Invalid frame header”问题
+        // pathRewrite: {} 重写请求地址
       },
       '/pbsevice/*': {
         target: 'http://172.16.1.12:2018',

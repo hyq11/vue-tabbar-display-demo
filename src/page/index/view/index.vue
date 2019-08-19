@@ -1,9 +1,5 @@
 <template>
   <div class="hello">
-    <span @click="jumpTo('home')" class="foo">
-      home
-    </span>
-    <span @click="jumpTo('mine')">mine</span>
     <!--  这个只是显示 路由name== helloWorld的中的页面，包括子页面只会在这个router-view中显示 -->
     <router-view></router-view>
 
@@ -26,22 +22,21 @@
 
 <script>
 import { Tabbar, TabbarItem } from 'vant'
-import axios from 'axios'
-import { TABBAR } from "@/system/constants/tabbar"
+import { TABBAR } from '@/system/constants/tabbar'
 
 export default {
   name: 'index',
-  data(){
+  data () {
     return {
-     tabbar: TABBAR,
-     active: 0,
-     name: 'home'
+      tabbar: TABBAR,
+      active: 0,
+      name: 'home'
     }
   },
   methods: {
-    // Uncaught (in promise) NavigationDuplicated {_name: "NavigationDuplicated", name: "NavigationDuplicated"}
+    // Uncaught (in promise) NavigationDuplicated{_name: "NavigationDuplicated", name: "NavigationDuplicated"}
     // 这里会报导航重复错误
-    onChange(index) {
+    onChange (index) {
       this.name = index
     }
   },
