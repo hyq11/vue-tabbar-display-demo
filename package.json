@@ -5,7 +5,28 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "commit": "git-cz"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -24,13 +45,18 @@
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "@vue/eslint-config-standard": "^4.0.0",
+    "axios": "^0.19.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-es6-promise": "^1.1.1",
     "babel-plugin-import": "^1.12.0",
     "babel-plugin-imports-transform": "^0.1.0",
+    "commitizen": "^4.0.3",
     "compression-webpack-plugin": "^3.0.0",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vconsole-webpack-plugin": "^1.4.2",

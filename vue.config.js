@@ -33,13 +33,23 @@ module.exports = {
     // webpack目录别名alias
     // 以使用了webpack-chain链式API
     config.resolve.alias.set('@', path.join(__dirname, 'src'))
+  },
+  devServer: {
+    // host: 'localhost',
+    // host: '192.168.50.59',
+    // port: 8080, // 端口号
+    https: false, // https:{type:Boolean}
+    // open: true, // 配置自动启动浏览器  http://172.16.1.12:7071/rest/mcdPhoneBar/
+    hotOnly: true, // 热更新
+    proxy: {
+      '^/api': {
+        target: 'https://www.easy-mock.com/mock/5d1db78769f1017fd2d0e581/example',
+        ws: false,
+        changeOrigin: true,
+        pathRewrite: {
+          '/api': ''
+        }
+      }
+    }
   }
-  // devServer: {
-  //   // host: 'localhost',
-  //   host: '192.168.50.59',
-  //   port: 8080, // 端口号
-  //   https: false, // https:{type:Boolean}
-  //   open: true, // 配置自动启动浏览器  http://172.16.1.12:7071/rest/mcdPhoneBar/
-  //   hotOnly: true // 热更新
-  // }
 }

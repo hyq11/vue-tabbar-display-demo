@@ -5,6 +5,7 @@ export default [
     component () {
       return import(/* webpackChunkName:'login' */ '@/page/index/view/index.vue')
     },
+    redirect: '/home',
     children: [
       {
         name: 'home',

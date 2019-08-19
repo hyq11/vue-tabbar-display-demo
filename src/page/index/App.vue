@@ -12,21 +12,8 @@
 </template>
 
 <script>
-
 export default {
-  name: 'app',
-  data () {
-    return {
-
-    }
-  },
-  methods: {
-    jumpTo (name) {
-      this.$router.push({ name })
-    }
-  },
-  components: {
-  }
+  name: 'app'
 }
 </script>
 
@@ -39,6 +26,7 @@ export default {
   bottom: 0;
   width: 100%;
 }
+
 // 页面切换的css效果
 .fade-enter-active,
 .fade-leave-active {
